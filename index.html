@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="Super Mario in 100% Rust & WebAssembly running in the browser on GitHub Pages.">
+    <title>Super Mario WASM — WebAssembly Game</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SUPER MARIO WASM</h1>
+        <div class="sub-header">Built with Rust &bull; Compiled to WebAssembly &bull; 60 FPS Native Performance</div>
+    </header>
+
+    <main id="game-container">
+        <div class="top-bar">
+            <span style="color: #fbd000; font-size: 0.85rem; font-weight: bold;">WORLD 1-1</span>
+            <div class="controls-bar">
+                <button id="btn-mute" aria-label="Toggle Sound">🔊 Sound: On</button>
+                <button id="btn-fullscreen" aria-label="Toggle Fullscreen">⛶ Fullscreen</button>
+            </div>
+        </div>
+
+        <div class="canvas-wrapper">
+            <canvas id="game-canvas" width="320" height="240"></canvas>
+            <div id="loading">⚡ Loading WebAssembly Game...</div>
+        </div>
+
+        <!-- Touch Controls for mobile/tablet players -->
+        <div class="touch-controller">
+            <div class="dpad">
+                <button class="touch-btn" id="btn-left" aria-label="Move Left">◀</button>
+                <button class="touch-btn" id="btn-down" aria-label="Duck">▼</button>
+                <button class="touch-btn" id="btn-right" aria-label="Move Right">▶</button>
+            </div>
+            <div class="action-buttons">
+                <button class="touch-btn" id="btn-start" style="font-size: 0.75rem; width: 44px; height: 44px;" aria-label="Start">START</button>
+                <button class="touch-btn" id="btn-run" aria-label="Run / Sprint">B</button>
+                <button class="touch-btn" id="btn-jump" aria-label="Jump">A</button>
+            </div>
+        </div>
+    </main>
+
+    <section class="instructions-card">
+        <h3>🎮 CONTROLS & HOW TO PLAY</h3>
+        <p>
+            <span class="key-badge">←</span> <span class="key-badge">→</span> / <span class="key-badge">A</span> <span class="key-badge">D</span> : Walk / Run &nbsp;|&nbsp;
+            <span class="key-badge">↓</span> / <span class="key-badge">S</span> : Duck (Super Mario) &nbsp;|&nbsp;
+            <span class="key-badge">Space</span> / <span class="key-badge">Z</span> / <span class="key-badge">↑</span> : Jump &nbsp;|&nbsp;
+            <span class="key-badge">Shift</span> / <span class="key-badge">X</span> : Sprint Dash &nbsp;|&nbsp;
+            <span class="key-badge">Enter</span> : Start / Pause &nbsp;|&nbsp;
+            <span class="key-badge">M</span> : Mute Audio
+        </p>
+        <p style="margin-top: 6px; font-size: 0.75rem; color: #94a3b8;">
+            💡 <strong>Pro Tips:</strong> Hold Jump to jump higher! Stomp Goombas and kick Koopa shells to wipe out rows of enemies. Hit '?' blocks to collect coins and Super Mushrooms! Reach the top of the flagpole at the castle to maximize your stage bonus score!
+        </p>
+    </section>
+
+    <footer>
+        <p>Super Mario WebAssembly &copy; <span id="year">2026</span> | Developed with Rust + Wasm | Hosted on GitHub Pages</p>
+        <p style="margin-top: 4px;">
+            <a href="https://github.com/themaker00001/mario-wasm" target="_blank" rel="noopener noreferrer">⭐ View on GitHub: @themaker00001/mario-wasm</a>
+        </p>
+    </footer>
+
+    <script src="audio.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
